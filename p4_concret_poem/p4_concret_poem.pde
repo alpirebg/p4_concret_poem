@@ -13,13 +13,13 @@ void setup() {
 
   lineas = new ArrayList<JaLinea>();
 
-  //  6 líneas diagonales 
+ 
   float[] alturas = {0.1, 0.25, 0.4, 0.55, 0.7, 0.85};
   for (float h : alturas) {
     lineas.add(new JaLinea(-100, height * h, 1, 1));
   }
 
-  //  líneas verticales 
+  
   float[] anchos = {0.1, 0.25, 0.4, 0.55, 0.7, 0.85};
   for (float w : anchos) {
     lineas.add(new JaLinea(width * w, -100, 0, 1));
@@ -27,7 +27,7 @@ void setup() {
 }
 
 void draw() {
-  background(255); //  limpiar fondo cada frame para que transparencia se vea bien
+  background(255); 
   for (JaLinea linea : lineas) {
     linea.update();
     linea.display();
@@ -35,7 +35,7 @@ void draw() {
 }
 
 
-// Clase para una línea de "ja" dispersos
+
 
 class JaLinea {
   ArrayList<PVector> posiciones;
@@ -87,7 +87,7 @@ class JaLinea {
     for (int i = 0; i < posiciones.size(); i++) {
       PVector p = posiciones.get(i);
 
-      // Transparencia gradual 
+     
       float alpha = map(i, 0, posiciones.size(), 50, 200); // de más transparente a más opaco
       fill(0, alpha);
 
